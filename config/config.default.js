@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 module.exports = appInfo => {
   const config = {};
 
@@ -7,9 +9,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1493285411479_6518';
 
   // config response_handler middleware
-  config.middleware = [
-    'responseHandler',
-  ];
+  config.middleware = [ 'responseHandler' ];
   config.responseHandler = { match: appInfo.pkg.path };
 
   return config;
