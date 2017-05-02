@@ -35,6 +35,10 @@ exports.mysql = {
   agent: false,
 };
 
+exports.static = {
+  prefix: '/public/',
+};
+
 exports.security = {
   domainWhiteList: [],
 };
