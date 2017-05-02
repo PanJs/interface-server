@@ -5,7 +5,6 @@
 module.exports = () => {
   return function* (next) {
     try {
-      console.log(111111)
       yield next;
       const result = this.body;
       // 包装返回参数
