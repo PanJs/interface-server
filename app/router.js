@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = app => {
-  app.get('api/det', 'home.index');
+  app.get(app.config.pkg.path + '/test', 'home.index');
 };

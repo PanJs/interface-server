@@ -1,7 +1,7 @@
 {
   "name": "interface-server",
   "version": "1.0.0",
-  "path": "/gointerface",
+  "path": "/api",
   "description": "",
   "private": true,
   "dependencies": {
