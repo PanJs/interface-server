@@ -12,7 +12,7 @@ exports.validate = {
   package: 'egg-validate',
 };
 
-exports.mysql = {
+exports.sequelize = {
   enable: true,
-  package: 'egg-mysql',
+  package: 'egg-sequelize',
 };

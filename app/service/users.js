@@ -11,11 +11,9 @@
 module.exports = app => {
   class User extends app.Service {
     * login (obj) {
-      yield this.app.mysql.select('table-name', {
-        where: {
-          type: 'javascript'
-        }
-      });
+      const users = yield this.ctx.model.User.findAll();
+      console.log(users)
+      this.ctx.body = users;
     }
   }
   return User;
