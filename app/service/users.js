@@ -12,6 +12,7 @@ module.exports = app => {
   class User extends app.Service {
     * login (obj) {
       console.log(obj)
+      throw new Error('response status is not 200');
     }
   }
   return User;

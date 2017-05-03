@@ -8,7 +8,7 @@ module.exports = app => {
     'kaptcha/init',
   ]
   basePath.forEach(value => {
-    app.get(`${app.config.path}/${value}`, value.replace(/\//gi, '.'));
+    app.get(`${app.config.appConfig.path}/${value}`, value.replace(/\//gi, '.'));
   })
   // 特殊路径映射
   app.get(`${app.config.appConfig.path}/test`, 'home.index');

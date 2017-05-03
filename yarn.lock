@@ -1699,6 +1699,12 @@ egg-utils@^2.1.0:
   version "2.1.0"
   resolved "http://registry.npm.taobao.org/egg-utils/download/egg-utils-2.1.0.tgz#24b53ba3182540b13ecd9a0f1c9a641b1a9fb9ef"
 
+egg-validate@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/egg-validate/download/egg-validate-1.0.0.tgz#08471ea0ba01ef756c3f340d8b74f7c19c1a1a7b"
+  dependencies:
+    parameter "^2.0.0"
+
 egg-view@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/egg-view/download/egg-view-1.1.0.tgz#09350169ecdf29085254348850400ce1b9fa5279"
@@ -3372,6 +3378,10 @@ param-case@^2.1.0:
   resolved "http://registry.npm.taobao.org/param-case/download/param-case-2.1.1.tgz#df94fd8cf6531ecf75e6bef9a0858fbc72be2247"
   dependencies:
     no-case "^2.2.0"
+
+parameter@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/parameter/download/parameter-2.0.0.tgz#f3322d3dd43877412d3791022cecd438f08a6584"
 
 parse-glob@^3.0.4:
   version "3.0.4"
