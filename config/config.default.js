@@ -7,10 +7,9 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1493285411479_6518';
 
   // config middleware
-  config.middleware = [ 'responseHandler', 'loginHandler' ];
+  config.middleware = [ 'responseHandler' ];
   config.responseHandler = { match: `${appConfig.path}` };
   config.appConfig = appConfig;
-
 
   config.mysql = {
     // 单数据库信息配置
