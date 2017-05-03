@@ -5,14 +5,11 @@
 const defaultsp1 = '@#$*';
 const defaultsp2 = '$%^&';
 const accesstokendeskey = '2871sjks';
-const encrypt = require('./encrypt');
 const tools = require('./tools');
 module.exports = {
-
-
   decryptToken(token) {
     const tokenConfig = {};
-    const accessToken = encrypt.decrypt(token, accesstokendeskey);
+    const accessToken = tools.decrypt(token, accesstokendeskey);
     const index = accessToken.indexOf(defaultsp1);
     const index2 = accessToken.indexOf(defaultsp2);
     if (index === -1 || index2 === -1) return tokenConfig;
@@ -38,7 +35,7 @@ module.exports = {
   setToken(uid, password) {
     const date = new Date().getTime();
     let token = uid + defaultsp1 + date + defaultsp2 + password;
-    token = encrypt.encrypt(token, accesstokendeskey);
+    token = tools.encrypt(token, accesstokendeskey);
     this.ctx.cookies.set(this.app.config.appConfig.accessTokenKey, token, {
       maxAge: this.app.config.appConfig.accessTokenKeyTime,
     });

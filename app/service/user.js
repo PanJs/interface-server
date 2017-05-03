@@ -10,15 +10,15 @@
 
 module.exports = app => {
   class User extends app.Service {
-    * login (obj) {
+    * login(obj) {
       console.log(obj)
       const user = yield this.ctx.model.UserLogin.findOne({
         where: { email: obj.account },
       });
       if (user) {
         console.log(user.password)
-        console.log(this.ctx.helper.encrypt.md5(obj.password))
-        if (user.password === this.ctx.helper.encrypt.md5(obj.password)) {
+        console.log(this.ctx.helper.tools.md5(obj.password))
+        if (user.password === this.ctx.helper.tools.md5(obj.password)) {
           console.log(user.userId, obj.password)
           this.ctx.helper.token.setToken.call(this, user.userId, obj.password)
         }

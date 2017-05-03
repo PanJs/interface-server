@@ -20,7 +20,7 @@ module.exports = () => {
     const user = yield this.model.UserLogin.findOne({
       where: { userId: tokenConfig.uid },
     });
-    if (this.helper.tools.isEmpty(user) || user.password !== this.helper.encrypt.md5(tokenConfig.password)) return this.throw({ msg: '请求不合法' });
+    if (this.helper.tools.isEmpty(user) || user.password !== this.helper.tools.md5(tokenConfig.password)) return this.throw({ msg: '请求不合法' });
     yield next;
   };
 };
