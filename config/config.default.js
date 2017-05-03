@@ -6,9 +6,9 @@ module.exports = appInfo => {
   // should change to your own
   config.keys = appInfo.name + '_1493285411479_6518';
 
-  // config response_handler middleware
-  config.middleware = [ 'responseHandler' ];
-  config.responseHandler = { match: appInfo.pkg.path };
+  // config middleware
+  config.middleware = [ 'responseHandler', 'loginHandler' ];
+  config.responseHandler = { match: `${appConfig.path}` };
 
   return config;
 };

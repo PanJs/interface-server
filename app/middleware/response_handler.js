@@ -18,7 +18,7 @@ module.exports = () => {
       this.app.emit('error', err, this);
       this.body = {
         code: err.status,
-        msg: this.app.config.env === 'prod' ? 'Internal Server Error' : err.message,
+        msg: this.ctx.helper.tools.isEmpty(err.msg) ? err.message : err.msg,
       };
     }
   };
