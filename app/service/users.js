@@ -11,8 +11,11 @@
 module.exports = app => {
   class User extends app.Service {
     * login (obj) {
-      console.log(obj)
-      throw new Error('response status is not 200');
+      yield this.app.mysql.select('table-name', {
+        where: {
+          type: 'javascript'
+        }
+      });
     }
   }
   return User;

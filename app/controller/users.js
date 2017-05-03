@@ -4,6 +4,7 @@ module.exports = app => {
   class HomeController extends app.Controller {
     * login () {
       const { ctx } = this;
+      console.log(ctx.request.body)
       const createRule = {
         account: { type: 'string' },
         deskey: { type: 'string' },
@@ -16,7 +17,6 @@ module.exports = app => {
       // 校验参数
       ctx.validate(createRule);
 
-      console.log(ctx.request.body)
       // 2:验证参数
       yield ctx.service.users.login(ctx.request.body)
     }
