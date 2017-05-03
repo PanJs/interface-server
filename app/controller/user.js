@@ -18,7 +18,7 @@ module.exports = app => {
       ctx.validate(createRule);
 
       // 2:验证参数
-      yield ctx.service.users.login(ctx.request.body)
+      yield ctx.service.user.login(ctx.request.body)
     }
   }
   return HomeController;

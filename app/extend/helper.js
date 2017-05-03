@@ -5,7 +5,9 @@
 
 const token = require('./token');
 const tools = require('./tools');
+const encrypt = require('./encrypt');
 module.exports = {
-  token: token,
-  tools: tools,
+  token,
+  tools,
+  encrypt,
 };

@@ -8,12 +8,8 @@ const accesstokendeskey = '2871sjks';
 const encrypt = require('./encrypt');
 const tools = require('./tools');
 module.exports = {
-  // 生成token，规则 = encode("uid + sp1 + date + sp2 + password", deskey),sp1和sp2为固定值，deskey为加密key
-  createToken(uid, password) {
-    const date = new Date().getTime();
-    const token = uid + defaultsp1 + date + defaultsp2 + password;
-    return encrypt.encrypt(token, accesstokendeskey);
-  },
+
+
   decryptToken(token) {
     const tokenConfig = {};
     const accessToken = encrypt.decrypt(token, accesstokendeskey);
@@ -34,8 +30,15 @@ module.exports = {
     }
     return accesToken;
   },
-  setToken(token) {
-    if (tools.isEmpty(token)) return false;
+  /**
+   * 生成token，规则 = encode("uid + sp1 + date + sp2 + password", deskey),sp1和sp2为固定值，deskey为加密key
+   * @param {string} uid 用户id
+   * @param {string} password 用户密码
+   */
+  setToken(uid, password) {
+    const date = new Date().getTime();
+    let token = uid + defaultsp1 + date + defaultsp2 + password;
+    token = encrypt.encrypt(token, accesstokendeskey);
     this.ctx.cookies.set(this.app.config.appConfig.accessTokenKey, token, {
       maxAge: this.app.config.appConfig.accessTokenKeyTime,
     });

@@ -7,7 +7,7 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1493285411479_6518';
 
   // config middleware
-  config.middleware = [ 'responseHandler' ];
+  config.middleware = [ 'responseHandler', 'loginHandler' ];
   config.responseHandler = { match: `${appConfig.path}` };
   config.loginHandler = {
     ignore(ctx) {
