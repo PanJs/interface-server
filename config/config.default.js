@@ -9,38 +9,38 @@ module.exports = appInfo => {
   // config middleware
   config.middleware = [ 'responseHandler', 'loginHandler' ];
   config.responseHandler = { match: `${appConfig.path}` };
+  config.appConfig = appConfig;
 
+
+  config.mysql = {
+    // 单数据库信息配置
+    client: {
+      // host
+      host: 'mimaijinfu.mysql.rds.aliyuncs.com',
+      // 端口号
+      port: '3306',
+      // 用户名
+      user: 'star',
+      // 密码
+      password: 'Codingstar1018',
+      // 数据库名
+      database: 'gointerface',
+    },
+    // 是否加载到 app 上，默认开启
+    app: true,
+    // 是否加载到 agent 上，默认关闭
+    agent: false,
+  };
+
+  config.static = {
+    prefix: '/public/',
+  };
+
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+  config.cors = {};
   return config;
 };
-exports.appConfig = appConfig;
-exports.mysql = {
-  // 单数据库信息配置
-  client: {
-    // host
-    host: 'mimaijinfu.mysql.rds.aliyuncs.com',
-    // 端口号
-    port: '3306',
-    // 用户名
-    user: 'star',
-    // 密码
-    password: 'Codingstar1018',
-    // 数据库名
-    database: 'gointerface',
-  },
-  // 是否加载到 app 上，默认开启
-  app: true,
-  // 是否加载到 agent 上，默认关闭
-  agent: false,
-};
-
-exports.static = {
-  prefix: '/public/',
-};
-
-exports.security = {
-  csrf: {
-    enable: false,
-  },
-};
-
-exports.cors = {};

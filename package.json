@@ -1,7 +1,6 @@
 {
   "name": "interface-server",
   "version": "1.0.0",
-  "path": "/api",
   "description": "",
   "private": true,
   "dependencies": {
