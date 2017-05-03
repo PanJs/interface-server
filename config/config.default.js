@@ -1,4 +1,5 @@
 'use strict';
+const appConfig = require('./config.app')
 module.exports = appInfo => {
   const config = {};
 
@@ -11,7 +12,7 @@ module.exports = appInfo => {
 
   return config;
 };
-
+exports.appConfig = appConfig;
 exports.mysql = {
   // 单数据库信息配置
   client: {
