@@ -14,6 +14,7 @@ module.exports = appInfo => {
       // 需要忽略的请求路径
       const arr = [
         '/kaptcha/init',
+        '/user/login',
       ];
       let flag = false;
       arr.forEach(value => {
