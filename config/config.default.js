@@ -9,6 +9,13 @@ module.exports = appInfo => {
   // config middleware
   config.middleware = [ 'responseHandler', 'loginHandler' ];
   config.responseHandler = { match: `${appConfig.path}` };
+  config.loginHandler = {
+    ignore(ctx) {
+      // 需要忽略的请求路径
+      const reg = /iphone|ipad|ipod/i;
+      return reg.test(ctx.get('user-agent'));
+    },
+  }
   config.appConfig = appConfig;
 
 

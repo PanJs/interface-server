@@ -11,6 +11,5 @@ module.exports = app => {
     app.get(`${app.config.path}/${value}`, value.replace(/\//gi, '.'));
   })
   // 特殊路径映射
-  const loginHandler = app.middlewares.loginHandler;
-  app.get(`${app.config.appConfig.path}/test`, loginHandler, 'home.index');
+  app.get(`${app.config.appConfig.path}/test`, 'home.index');
 };

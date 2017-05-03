@@ -27,10 +27,10 @@ module.exports = {
     return tokenConfig;
   },
   getToken() {
-    let accesToken = this.ctx.cookies.get(this.app.config.appConfig.accessTokenKey);
+    let accesToken = this.cookies.get(this.app.config.appConfig.accessTokenKey);
     if (tools.isEmpty(accesToken)) {
       // 从header取值
-      accesToken = this.ctx.headers.get(this.app.config.appConfig.accessTokenKey);
+      accesToken = this.headers[ this.app.config.appConfig.accessTokenKey ];
     }
     return accesToken;
   },
