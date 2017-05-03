@@ -30,4 +30,14 @@ module.exports = {
     txt += decipher.final('utf8');
     return txt;
   },
+  /**
+   * md5 加密
+   * @param {string} str 加密字符串
+   * @return {*} 加密后的字符串
+   */
+  md5(str) {
+    const hash = crypto.createHash('sha256');
+    hash.update(str);
+    return hash.digest('hex');
+  },
 };
