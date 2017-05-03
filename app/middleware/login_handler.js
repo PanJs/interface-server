@@ -5,6 +5,7 @@
 module.exports = () => {
   return function* (next) {
     // 校验登录信息
+    const accessToken = this.ctx.cookies.get();
     yield next;
   };
 };
