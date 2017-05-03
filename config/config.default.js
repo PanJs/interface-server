@@ -12,8 +12,17 @@ module.exports = appInfo => {
   config.loginHandler = {
     ignore(ctx) {
       // 需要忽略的请求路径
-      const reg = /iphone|ipad|ipod/i;
-      return reg.test(ctx.get('user-agent'));
+      const arr = [
+        '/kaptcha/init',
+      ];
+      let flag = false;
+      arr.forEach(value => {
+        const reg = new RegExp(appConfig.path + value, 'gi');
+        if (reg.test(ctx.url)) {
+          flag = true;
+        }
+      });
+      return flag;
     },
   }
   config.appConfig = appConfig;
