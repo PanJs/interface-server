@@ -11,7 +11,7 @@
 const captchapng = require('captchapng');
 
 module.exports = app => {
-  class User extends app.Service {
+  class Kaptcha extends app.Service {
     * getCaptcha(key) {
       const p = new captchapng(80, 30, key); // width,height,numeric captcha
       p.color(0, 0, 0, 0);  // First color: background (red, green, blue, alpha)
@@ -20,5 +20,5 @@ module.exports = app => {
       return img
     }
   }
-  return User;
+  return Kaptcha;
 };

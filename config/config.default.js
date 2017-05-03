@@ -38,6 +38,9 @@ exports.static = {
 };
 
 exports.security = {
-  domainWhiteList: [],
+  csrf: {
+    enable: false,
+  },
 };
+
 exports.cors = {};
