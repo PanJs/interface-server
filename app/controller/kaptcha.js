@@ -10,12 +10,13 @@
 
 module.exports = app => {
   class HomeController extends app.Controller {
-    * init(ctx) {
+    * init (ctx) {
       const info = {
         img: '',
         key: '',
       }
-      info.img = yield ctx.service.kaptcha('1234')
+      info.key = parseInt((Math.random() * 10000))
+      info.img = yield ctx.service.kaptcha.getCaptcha(info.key)
       ctx.session.kaptcha = info.key;
       this.ctx.body = info;
     }
