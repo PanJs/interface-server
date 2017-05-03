@@ -17,8 +17,8 @@ module.exports = () => {
       return this.throw({ msg: '您的登录已失效，请重新登录' });
     }
     // 请求数据库校验用户uid
-    const password = yield this.app.mysql.select('tb_user_login', { where: { user_id: tokenConfig.uid }, columns: [ 'password' ] });
-    if (this.helper.tools.isEmpty(password) || password !== this.helper.token.md5(tokenConfig.password)) return this.throw({ msg: '请求不合法' });
+    const result = yield this.app.mysql.queryOne('select password from tb_user_login where user_id=? ', [ tokenConfig.uid ]);
+    if (this.helper.tools.isEmpty(result) || result.password !== this.helper.token.md5(tokenConfig.password)) return this.throw({ msg: '请求不合法' });
     yield next;
   };
 };

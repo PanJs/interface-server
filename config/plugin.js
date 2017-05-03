@@ -12,3 +12,7 @@ exports.validate = {
   package: 'egg-validate',
 };
 
+exports.mysql = {
+  enable: true,
+  package: 'egg-mysql',
+};
