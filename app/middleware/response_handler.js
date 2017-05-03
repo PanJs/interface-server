@@ -18,7 +18,7 @@ module.exports = () => {
       this.app.emit('error', err, this);
       this.body = {
         code: err.status,
-        msg: this.ctx.helper.tools.isEmpty(err.msg) ? err.message : err.msg,
+        msg: this.helper.tools.isEmpty(err.msg) ? err.message : err.msg,
       };
     }
   };
